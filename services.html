@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Megha Delivery - Our Services</title>
+
+    <link rel="icon" type="image/jpg" href="logo.png.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+Sinhala:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .services-hero {
+            padding: 100px 0 60px;
+            text-align: center;
+            background: linear-gradient(rgba(3, 26, 14, 0.8), rgba(3, 26, 14, 0.9));
+            background-size: cover;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: #fccb05;
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #fccb05;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .services-hero {
+                padding: 60px 0 40px;
+            }
+
+            .brand-name {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-area">
+                <img src="logo.png.jpg" alt="Megha Delivery Logo" class="main-logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="services.html" style="color: #fccb05;">Services</a></li>
+                <li><a href="contact.html" class="nav-contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="services-hero">
+        <div class="container">
+            <h1 class="brand-name">Our <span>Services</span></h1>
+            <p class="tagline">ඔබේ ගමන සුවපහසු කරන අපේ සේවාවන්</p>
+        </div>
+    </section>
+
+    <section class="services-section" style="padding: 60px 0;">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-motorcycle"></i></div>
+                    <h3>Budget Rides</h3>
+                    <p style="color: #d1d1d1;">අඩුම මිලට ඉක්මනින් ගමනාන්තය කරා යන්න.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-car"></i></div>
+                    <h3>Comfort Rides</h3>
+                    <p style="color: #d1d1d1;">සුවපහසු වායුසමනය කළ කාර් සහ වෑන් රථ සේවාව.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-box-open"></i></div>
+                    <h3>Delivery</h3>
+                    <p style="color: #d1d1d1;">භාණ්ඩ සහ පාර්සල් ආරක්ෂිතව බෙදාහැරීම.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html" class="btn-register" style="font-size: 1rem; padding: 15px 30px;">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 <strong>Megha Delivery</strong>. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

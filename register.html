@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Megha Delivery - Driver Registration</title>
+
+    <link rel="icon" type="image/jpg" href="logo.png.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+Sinhala:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .reg-body {
+            background-color: #031a0e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .registration-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #fccb05;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            outline: none;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            border-color: #fccb05;
+        }
+
+        .form-group select option {
+            background: #031a0e;
+            color: #fff;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .registration-card {
+                padding: 25px;
+            }
+        }
+
+        .btn-submit {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .back-home {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .back-home:hover {
+            opacity: 1;
+            color: #fccb05;
+        }
+    </style>
+</head>
+
+<body class="reg-body">
+
+    <div class="registration-card">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <img src="logo.png.jpg" alt="Megha Delivery Logo"
+                style="height: 80px; margin-bottom: 15px; border-radius: 10px;">
+            <h2 style="color: #fff;">Driver Registration</h2>
+            <p style="opacity: 0.8; font-size: 0.9rem;">ඔබේ විස්තර නිවැරදිව ඇතුළත් කරන්න.</p>
+        </div>
+
+        <form id="driverForm">
+            <div class="form-group">
+                <label>සම්පූර්ණ නම (Full Name)</label>
+                <input type="text" id="name" placeholder="Ex: Kamal Perera" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>දුරකථන අංකය (Phone No)</label>
+                    <input type="tel" id="phone" placeholder="07x xxxxxxx" required>
+                </div>
+                <div class="form-group">
+                    <label>හැඳුනුම්පත් අංකය (ID No)</label>
+                    <input type="text" id="nic" placeholder="NIC Number" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>වාහන අංකය (Vehicle No)</label>
+                    <input type="text" id="vehicle_no" placeholder="Ex: WP ABC-1234" required>
+                </div>
+                <div class="form-group">
+                    <label>වාහන වර්ගය (Vehicle Type)</label>
+                    <select id="vehicle_type" required>
+                        <option value="" disabled selected>තෝරන්න...</option>
+                        <option value="Bike">Bike</option>
+                        <option value="Tuk Tuk">Tuk Tuk</option>
+                        <option value="Car">Car</option>
+                        <option value="Van">Van</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-register btn-submit">Submit Registration</button>
+        </form>
+
+        <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home Page</a>
+    </div>
+
+    <script>
+        document.getElementById('driverForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const nic = document.getElementById('nic').value;
+            const vehicleNo = document.getElementById('vehicle_no').value;
+            const vehicleType = document.getElementById('vehicle_type').value;
+
+            const message = `*New Driver Registration - Megha Delivery*%0A%0A` +
+                `*Full Name:* ${name}%0A` +
+                `*Phone No:* ${phone}%0A` +
+                `*NIC No:* ${nic}%0A` +
+                `*Vehicle No:* ${vehicleNo}%0A` +
+                `*Vehicle Type:* ${vehicleType}`;
+
+            const whatsappNumber = "94788845041";
+            const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+            window.open(url, '_blank').focus();
+        });
+    </script>
+
+</body>
+
+</html>
